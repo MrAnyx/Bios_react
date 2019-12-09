@@ -3,22 +3,22 @@
     font-style: normal;
     font-weight: 300;
     src: url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
-}
-@font-face {
+  }
+  @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-}
-@font-face {
+  }
+  @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     src: url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
-}
-@font-face {
+  }
+  @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 900;
     src: url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
-}
+  }

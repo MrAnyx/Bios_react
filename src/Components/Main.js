@@ -14,10 +14,25 @@ export default class Main extends React.Component {
 		}
 	}
 
-	addPost() {
-		this.setState((state) => {
-			return {posts: state.posts + 1}
-		}, console.log(this.state.posts))
+	addPost(event) {
+		event.preventDefault();
+		let el = {
+			image: "https://source.unsplash.com/WLUHO9A_xik/1600x900",
+			date: "2019-12-16",
+			titre: "Titre",
+			content: "Pariatur Lorem est veniam fugiat sint esse nostrud pariatur aliqua. Mollit consectetur et sunt fugiat ea laborum ipsum non occaecat nisi deserunt dolor. Ipsum elit laboris cupidatat officia officia Lorem nisi laborum deserunt. Ea et excepteur ipsum irure cillum."
+		}
+		this.setState({
+			posts: [...this.state.posts, el]
+		}, () => console.log(this.state.posts))
+	}
+
+	renderPost() {
+		return this.state.posts.map((item) => {
+			return (
+				<Card image={item.image} date={item.date} titre={item.titre} content={item.content}/>
+			)
+		})
 	}
 
     render() {
@@ -32,8 +47,7 @@ export default class Main extends React.Component {
 				</div>
 
 				<AllCards>
-					<Card image={image} date="2019-12-16" titre="Titre1" content="Ex incididunt dolore mollit occaecat deserunt. Duis reprehenderit commodo ullamco sit fugiat nulla culpa officia velit commodo elit. Ut nisi deserunt magna reprehenderit occaecat cillum deserunt magna deserunt irure magna labore enim. Consectetur veniam do amet tempor adipisicing ad dolore ea. Et cupidatat proident culpa incididunt. Dolore consequat ea sunt occaecat officia velit exercitation esse enim mollit. Id consectetur in consectetur eiusmod laborum anim dolor occaecat ut magna Lorem dolore nisi eu."/>
-					<Card image='https://source.unsplash.com/WLUHO9A_xik/1600x900' date="2019-12-16" titre="Titre1" content="Ex incididunt dolore mollit occaecat deserunt. Duis reprehenderit commodo ullamco sit fugiat nulla culpa officia velit commodo elit. Ut nisi deserunt magna reprehenderit occaecat cillum deserunt magna deserunt irure magna labore enim. Consectetur veniam do amet tempor adipisicing ad dolore ea. Et cupidatat proident culpa incididunt. Dolore consequat ea sunt occaecat officia velit exercitation esse enim mollit. Id consectetur in consectetur eiusmod laborum anim dolor occaecat ut magna Lorem dolore nisi eu."/>
+					{this.renderPost()}
 				</AllCards>
 				
 			</main>

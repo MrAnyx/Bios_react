@@ -153,6 +153,16 @@ main::after{
 	font-family: "Montserrat", sans-serif;
 }
 
+#button{
+	margin: 0 auto;
+	background: linear-gradient(135deg, #4376A1, #23487B);
+	padding: 8px 30px;
+	border: 0px solid transparent;
+	border-radius: 50px;
+	color: white;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
 
 
 /* Cards */

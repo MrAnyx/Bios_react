@@ -3,9 +3,8 @@ import '../css/main.css'
 import ImageHeader from './ImageHeader'
 import Card from './Card'
 import AllCards from './AllCards'
-import image from '../assets/image2.jpg'
 
-export default class Main extends React.Component {
+export default class ContenuMain extends React.Component {
 
 	constructor(){
 		super();

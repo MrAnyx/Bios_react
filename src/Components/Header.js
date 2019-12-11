@@ -2,6 +2,8 @@ import React from 'react'
 import '../css/main.css'
 import logo from '../assets/logo.png'
 
+import {Link} from "react-router-dom";
+
 export default class Header extends React.Component {
 	render () {
 		return (
@@ -11,9 +13,9 @@ export default class Header extends React.Component {
 						<img src={logo} alt="Logo de la page"/>
 					</div>
 					<div id="links">
-						<span className="link">Features</span>
-						<span className="link">Feedback</span>
-						<span id="dl_app">Download app</span>
+						<Link className="link" to="/">Features</Link>
+						<Link className="link" to="/test">Feedback</Link>
+						<Link id="dl_app" to="/test1">Download app</Link>
 					</div>
 				</div>
 			</header>

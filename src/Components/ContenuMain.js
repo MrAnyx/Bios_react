@@ -14,22 +14,40 @@ export default class ContenuMain extends React.Component {
 	}
 
 	addPost(event) {
-		event.preventDefault();
+		event.preventDefault()
+
 		let el = {
-			image: "https://source.unsplash.com/WLUHO9A_xik/1600x900",
-			date: "2019-12-16",
+			id: 1,
+			image: "https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&auto=format&fit=crop&w=696&q=80",
 			titre: "Titre",
-			content: "Pariatur Lorem est veniam fugiat sint esse nostrud pariatur aliqua. Mollit consectetur et sunt fugiat ea laborum ipsum non occaecat nisi deserunt dolor. Ipsum elit laboris cupidatat officia officia Lorem nisi laborum deserunt. Ea et excepteur ipsum irure cillum."
+			contenu: "Officia velit excepteur eiusmod anim exercitation sit laboris nisi velit non. Nostrud ullamco irure velit reprehenderit nulla ipsum esse aliquip fugiat ex ex ipsum Lorem. Nisi laboris sit ad cillum enim occaecat duis mollit minim non veniam magna commodo. Nostrud mollit magna laboris commodo quis occaecat officia eu Lorem quis cillum do Lorem. Minim reprehenderit commodo minim irure elit officia minim anim.",
+			date: "2019-12-12"
 		}
+
 		this.setState({
 			posts: [...this.state.posts, el]
 		}, () => console.log(this.state.posts))
+
+		/*
+		fetch(`http://localhost:5000/getAll`)
+		.then(result => result.json())
+		.then(({ data }) => {
+			data.map((item) => {
+				this.setState({
+					posts: [...this.state.posts, item]
+				}, () => console.log(data))
+			})
+		})
+		.catch(err => console.error(err))
+		*/
+
+		
 	}
 
 	renderPost() {
 		return this.state.posts.map((item) => {
 			return (
-				<Card image={item.image} date={item.date} titre={item.titre} content={item.content}/>
+				<Card key={item.id} image={item.image} date={item.date} titre={item.titre} content={item.contenu}/>
 			)
 		})
 	}
@@ -41,7 +59,7 @@ export default class ContenuMain extends React.Component {
 
 				<h1 id="title_content">Big plus to your productivity</h1>
 
-				<div class="container-fluid justify-content-center row">
+				<div className="container-fluid justify-content-center row">
 					<button id="button" onClick={this.addPost.bind(this)}>click</button>
 				</div>
 

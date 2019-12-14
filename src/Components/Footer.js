@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/main.css'
-import logo from '../assets/logo.png'
+import logo from '../assets/b_black.png'
 
 export default class Footer extends React.Component {
 	render() {
@@ -18,7 +18,7 @@ export default class Footer extends React.Component {
 
 				<div id="footer">
 					<div className="footer_flex">
-						© Crab'Gang
+						© BIOS
 					</div>
 					<div className="footer_flex">
 						<div id="logo_footer" className="mx-auto">

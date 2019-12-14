@@ -35,8 +35,8 @@ export default class ContenuMain extends React.Component {
         return (
             <main>
 				<ImageHeader/>
-
-				<h1 id="title_content">Big plus to your productivity</h1>
+				<span id="ref_to_bot"></span>
+				<h1 id="title_content">Take a look at these posts</h1>
 
 				<AllCards>
 					{this.renderPost()}

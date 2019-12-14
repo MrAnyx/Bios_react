@@ -1,14 +1,17 @@
 @import "./fonts.css"; 
 
+
+
 /* Reset Style */
 * {
     margin: 0;
     padding: 0;
 }
 
-body{
+body, html{
 	/*background-color: rgb(30,30,30);*/
 	background-color: white;
+	scroll-behavior: smooth;
 }
 
 
@@ -87,14 +90,14 @@ header{
 	border-radius: 20px;
 	position: relative;
 }
-main::after{
-	content:"+";
+#to_bot{
 	width: 60px;
 	height: 60px;
 	color: white;
 	background-color: #4195C8;
 	text-align: center;
-	line-height: 200%; /* pour centrer verticalement la croix */
+	text-decoration: none;
+	line-height: 200%;
 	font-family: "Montserrat", sans-serif;
 	font-weight: 400;
 	font-size: 30px;
@@ -102,8 +105,10 @@ main::after{
 	top: 640px;
 	left: 80%;
 	border-radius: 50%;
-	box-shadow: 5px 5px 15px rgba(0,0,0,.5), 0px 0px 10px 3px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 5px 5px 10px rgba(0,0,0,.5), 0px 0px 10px 3px rgba(0, 0, 0, 0.1) inset;
+	z-index: 5;
 }
+
 #image_header img{
 	width: 100%;
 	height: 100%;

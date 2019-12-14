@@ -6,6 +6,7 @@ import ContenuMain from './ContenuMain'
 
 export default class App extends React.Component {
 	render() {
+		
 		return (
 			<Router>
 				<Header/>

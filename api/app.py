@@ -24,11 +24,20 @@ def getAll():
     con = connexion()
     with con:
         cur = con.cursor()
-        sql = "select * from post"
+        sql = "SELECT * FROM post ORDER BY id_post DESC"
         cur.execute(sql, ())
         result = cur.fetchall()
         return jsonify(data=result), 200
 
+@app.route("/getLast4", methods=["GET"])
+def getLast4():
+    con = connexion()
+    with con:
+        cur = con.cursor()
+        sql = "SELECT * FROM post ORDER BY id_post DESC LIMIT 4"
+        cur.execute(sql, ())
+        result = cur.fetchall()
+        return jsonify(data=result), 200
 
 if __name__ == "__main__":
     app.run()

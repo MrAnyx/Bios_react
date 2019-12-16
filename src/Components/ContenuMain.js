@@ -3,6 +3,7 @@ import '../css/main.css'
 import ImageHeader from './ImageHeader'
 import Card from './Card'
 import AllCards from './AllCards'
+import FormInput from './FormInput'
 
 export default class ContenuMain extends React.Component {
 
@@ -41,6 +42,10 @@ export default class ContenuMain extends React.Component {
 				<AllCards>
 					{this.renderPost()}
 				</AllCards>
+
+				<FormInput/>
+
+
 				
 			</main>
         )

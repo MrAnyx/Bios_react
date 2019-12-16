@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import pymysql
 import os
 from dotenv import load_dotenv, find_dotenv
@@ -38,6 +38,18 @@ def getLast4():
         cur.execute(sql, ())
         result = cur.fetchall()
         return jsonify(data=result), 200
+
+@app.route("/submitPost", methods=["POST"])
+def submitPost():
+    params = request.json()
+    
+    con = connexion()
+    with con:
+        cur = con.cursor()
+        sql = "INSERT INTO post(titre_post, contenu_post, image_post) VALUES (%s, %s, %s)"
+        cur.execute(sql, (params["titre"], params["contenu"],params["image"]))
+        return jsonify(data="done"), 200
+
 
 if __name__ == "__main__":
     app.run()

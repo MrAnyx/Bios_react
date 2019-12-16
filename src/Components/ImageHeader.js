@@ -2,7 +2,6 @@
 import React from 'react'
 import image from '../assets/image.jpg'
 import '../css/main.css'
-import {Link} from "react-router-dom";
 
 export default class ImageHeader extends React.Component {
     render() {

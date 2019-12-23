@@ -19,6 +19,27 @@ def connexion():
         charset="utf8mb4",
         cursorclass=pymysql.cursors.DictCursor)
 
+
+
+@app.route("/login", methods=["POST"])
+def login:
+    pass
+
+@app.route("/register", methods=["POST"])
+def register:
+    pass
+
+@app.route("/logout", methods=["POST"])
+def logout:
+    pass
+
+@app.route("/isConnected", methods=["POST"])
+def isConnected:
+    # utiliser un token ou une variable session
+    pass
+
+
+
 @app.route("/getAll", methods=["GET"])
 def getAll():
     con = connexion()
@@ -41,14 +62,21 @@ def getLast4():
 
 @app.route("/submitPost", methods=["POST"])
 def submitPost():
-    params = request.json()
+    titre = request.json.get("titre")
+    contenu = request.json.get("contenu")
+    image = request.json.get("image")
+   
     
     con = connexion()
     with con:
         cur = con.cursor()
         sql = "INSERT INTO post(titre_post, contenu_post, image_post) VALUES (%s, %s, %s)"
-        cur.execute(sql, (params["titre"], params["contenu"],params["image"]))
-        return jsonify(data="done"), 200
+        cur.execute(sql, (titre, contenu, image))
+
+        sql = "SELECT * FROM post ORDER BY id_post DESC LIMIT 1"
+        cur.execute(sql, ())
+        lastPost = cur.fetchall()
+        return jsonify(data=lastPost), 200
 
 
 if __name__ == "__main__":

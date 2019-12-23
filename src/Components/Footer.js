@@ -10,8 +10,8 @@ export default class Footer extends React.Component {
 					<div id="text_footer">
 						<h1>Lorem ipsum dolor sit amet, consectetur adipisicing sunt</h1>
 						<div id="buttons_image" className="mt-4">
-							<a>Previous project</a>
-							<a>► Watch a video</a>
+							<a href="./">Previous project</a>
+							<a href="./">► Watch a video</a>
 						</div>
 					</div>
 				</div>
@@ -26,7 +26,7 @@ export default class Footer extends React.Component {
 						</div>
 					</div>
 					<div className="footer_flex text-right">
-						<a>Privacy</a>
+						<a href="./">Privacy</a>
 					</div>
 				</div>
 		

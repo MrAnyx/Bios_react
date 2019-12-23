@@ -14,7 +14,7 @@ export default class Card extends React.Component {
                         <h6 className="title pt-1">{this.props.titre}</h6>
                         <div className="resume mt-2">{this.props.content}</div>
                         <br/>
-                        <a className="read-more px-4 py-2">Read More</a>
+                        <a className="read-more px-4 py-2" href="./">Read More</a>
                     </div>
                 </div>
             </div>

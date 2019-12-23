@@ -11,11 +11,11 @@ export default class ImageHeader extends React.Component {
                 <div id="image_header">
                     <img src={image} alt="main header"/>
                     <div id="caption_image">
-                        <h1>Bios - Computing blog</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h1>Titre du dernier article</h1>
+                        <p>Résumé du dernier article blablablabla blablablabla ablabla balabablablablabla</p>
                         <div id="buttons_image">
-                            <a>Previous project</a>
-                            <a>► Watch a video</a>
+                            <a>Read this post</a>
+                            <a>Other posts</a>
                         </div>
                     </div>
                 </div>

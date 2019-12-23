@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/main.css'
+import axios from 'axios'
 
 export default class FormInput extends React.Component {
     constructor() {
@@ -27,30 +28,30 @@ export default class FormInput extends React.Component {
         }, () => console.log(this.state.image))
     }
 
-    submit() {
-        fetch('http://localhost:5000/submitPost', {
-            method: "POST", 
-            header: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
+    submit(event) {
+        event.preventDefault()
+
+        axios({
+            method: 'post',
+            url: 'http://localhost:5000/submitPost',
+            data: {
                 titre: this.state.titre,
-                image: this.state.image,
-                contenu: this.state.contenu
-            })
+                contenu: this.state.contenu,
+                image: this.state.image
+            }
         })
+        .then(data => console.log(data))
     }
 
     render() {
         return (
             <div>
-
-                <input type="text" placeholder="Text : " onChange={this.updateTitre.bind(this)}/>
-                <input type="text" placeholder="Contenu : " onChange={this.updateContenu.bind(this)}/>
-                <input type="text" placeholder="Image : " onChange={this.updageImage.bind(this)}/>
-                <button type="submit" onClick={this.submit.bind(this)}>Submit</button>
-
+                <form onSubmit={this.submit.bind(this)}>
+                    <input type="text" placeholder="Text : " onChange={this.updateTitre.bind(this)}/>
+                    <input type="text" placeholder="Contenu : " onChange={this.updateContenu.bind(this)}/>
+                    <input type="text" placeholder="Image : " onChange={this.updageImage.bind(this)}/>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         )
     }
